@@ -5,6 +5,7 @@ import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
 import './App.css'
 import Main from './Component/main/main'
 import Navbar from './Component/Navbar/navbar'
+import AppContextProvider from './context/appContextProvider'
 
 
 
@@ -13,10 +14,12 @@ function App() {
 
   return (
     <Router>
+    <AppContextProvider>
     <Navbar/>
     <Routes>
     <Route path='/' element={<Main/>}></Route>
     </Routes>
+    </AppContextProvider>
     </Router>
   )
 }

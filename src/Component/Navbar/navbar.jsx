@@ -20,7 +20,7 @@ export default function Navbar() {
     <div className=' h-max flex bg-white pb-3 dark:bg-slate-950 dark:text-white dark:bg-gray-900'>
     <button className="display pt-1 pb-1 pb-1.5 text-gray-600 text-base/4 flex border-gray-200 shadow-sm shadow-gray-500/40  pl-3 pr-3 rounded ml-3 mt-3 text-xl dark:text-white  " onClick={()=>{
       setToggle(!toggle)
-    }}> <SlidersHorizontal color='gray' size={14} className='mt-0.5 mr-2'/> Display <ChevronDown color='gray' size={14} className='mt-1 ml-2'/></button>
+    }}> <SlidersHorizontal color='gray' size={14} className='mt-0.5 mr-2'/> <span className='text-sm'>Display</span>  <ChevronDown color='gray' size={14} className='mt-1 ml-2'/></button>
     <div>
     {toggle? "":<Dropdown/>}
 

@@ -7,6 +7,8 @@ import { AppContext } from '../../context/appContext'
 
 
 export default function Main() {
+
+
   const {data,grouping,ordering}=useContext(AppContext);
   const keys=Object.keys(data)
   console.log(data);

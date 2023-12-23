@@ -24,18 +24,23 @@ const AppContextProvider=({children})=>{
     const local_ordering= localStorage.getItem('order')
     const local_theme= localStorage.getItem('theme')
     useEffect(()=>{
-
-        if(local_group==null){
+        const local_group= localStorage.getItem('group')
+        const local_ordering= localStorage.getItem('order')
+        const local_theme= localStorage.getItem('theme')
+        // console.log(typeof(local_group),local_ordering,local_theme)
+        if(local_group=='null'){
+            console.log("changed local group")
             localStorage.setItem("group","priority")   
-    }
-
-    if(local_ordering==null){
-        localStorage.setItem("order","title")   
-    }
-    if(local_theme==null){
-        localStorage.setItem("theme","light")   
-    }
-    },[])
+        }
+        
+        if(local_ordering=="null"){
+            console.log("changed local order")
+            localStorage.setItem("order","title")   
+        }
+        if(local_theme=="null"){
+            localStorage.setItem("theme","light")   
+        }
+        },[])
 
     const [grouping,setgrouping]=useState(local_group);
     const [ordering,setordering]=useState(local_ordering);

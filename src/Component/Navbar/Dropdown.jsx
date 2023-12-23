@@ -4,7 +4,7 @@ import { useContext } from 'react'
 export default function Dropdown() {
     const {grouping,setgrouping,ordering,setordering}=useContext(AppContext)
   return (
-    <div  className='dropdown bg-white rounded border-current dark:text-white dark:bg-black'>
+    <div  className='dropdown bg-white rounded shadow-sm shadow-slate-500 dark:text-white dark:bg-black'>
     <div className=''>Grouping</div>
     <div>
     <select id="dropdown" name="dropdown" value={grouping} className='dark:bg-black' onChange={(e)=>{

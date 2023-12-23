@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import './navbar.css'
 import Dropdown from './Dropdown';
 import { AppContext } from '../../context/appContext';
-import { Moon ,Sun} from 'lucide-react';
+import { Moon ,Sun,SlidersHorizontal,ChevronDown } from 'lucide-react';
 export default function Navbar() {
  
   const [toggle,setToggle]=useState(1);
@@ -17,15 +17,15 @@ export default function Navbar() {
   },[])
 
   return (
-    <div className=' h-max flex pl-5 pr-5 dark:bg-black dark:text-white'>
-    <button className="display  pl-3 pr-3 rounded ml-3 mt-3 text-xl  " onClick={()=>{
+    <div className=' h-max flex bg-white pb-3 dark:bg-slate-950 dark:text-white dark:bg-gray-900'>
+    <button className="display pt-1 pb-1 pb-1.5 text-gray-600 text-base/4 flex border-gray-200 shadow-sm shadow-gray-500/40  pl-3 pr-3 rounded ml-3 mt-3 text-xl dark:text-white  " onClick={()=>{
       setToggle(!toggle)
-    }}>Display</button>
+    }}> <SlidersHorizontal color='gray' size={14} className='mt-0.5 mr-2'/> Display <ChevronDown color='gray' size={14} className='mt-1 ml-2'/></button>
     <div>
     {toggle? "":<Dropdown/>}
 
     </div>
-    <button className='ml-auto ' onClick={()=>{
+    <button className='ml-auto pr-5 mt-3' onClick={()=>{
       document.body.classList.toggle("dark")
       if(document.body.classList.contains("dark")){
         // console.log("dark")

@@ -23,9 +23,10 @@ const AppContextProvider=({children})=>{
     const local_group= localStorage.getItem('group')
     const local_ordering= localStorage.getItem('order')
     const local_theme= localStorage.getItem('theme')
-    
-    if(local_group==null){
-        localStorage.setItem("group","status")   
+    useEffect(()=>{
+
+        if(local_group==null){
+            localStorage.setItem("group","priority")   
     }
 
     if(local_ordering==null){
@@ -34,6 +35,7 @@ const AppContextProvider=({children})=>{
     if(local_theme==null){
         localStorage.setItem("theme","light")   
     }
+    },[])
 
     const [grouping,setgrouping]=useState(local_group);
     const [ordering,setordering]=useState(local_ordering);
